@@ -1,0 +1,14 @@
+[package]
+name = "libp2p-iroh"
+description = "iroh quic as libp2p transport"
+license = "MIT"
+authors = ["Zacharias Boehler <rustonbsd@mailfence.com>"]
+repository = "https://github.com/rustonbsd/libp2p-iroh"
+homepage = "https://rustonbsd.github.io/"
+readme = "README.md"
+keywords = ["networking"]
+categories = ["network-programming"]
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
