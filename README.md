@@ -1,5 +1,8 @@
 # libp2p-iroh
 
+[![Crates.io](https://img.shields.io/crates/v/libp2p-iroh.svg)](https://crates.io/crates/libp2p-iroh)
+[![Docs.rs](https://docs.rs/libp2p-iroh/badge.svg)](https://docs.rs/libp2p-iroh)
+
 A libp2p transport using [iroh](https://github.com/n0-computer/iroh) QUIC that works behind any NAT without port forwarding, UPnP, or manual configuration.
 
 ## Installation
