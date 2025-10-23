@@ -51,7 +51,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     swarm.listen_on(Multiaddr::empty())?;
 
     let mut listen_addr_printed = false;
-    let mut connected_to_bootstrap = false;
     let mut operation_completed = false;
 
     // Timeout for the entire operation
@@ -94,9 +93,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 format!("/p2p/{connected_peer}").parse().unwrap()
                             );
 
-                            if bootstrap_peer.is_some() && !connected_to_bootstrap {
-                                connected_to_bootstrap = true;
+                            println!("{:?},",swarm.connected_peers().count());
 
+                            if swarm.connected_peers().count() >= 2 {
                                 match operation.as_str() {
                                     "put" => {
                                         println!("NODE_{node_id}: Storing key '{test_key}' = '{test_value}'");
