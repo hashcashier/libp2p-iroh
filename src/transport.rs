@@ -119,7 +119,7 @@ impl Transport {
 
         let (waiter_tx, mut waiter_rx) = tokio::sync::mpsc::channel(1);
 
-        tokio::spawn({
+        n0_future::task::spawn({
             let transport_events_tx = transport_events_tx.clone();
             let secret_key = secret_key.clone();
             async move {
@@ -183,7 +183,7 @@ impl Protocol {
         tracing::debug!("Protocol::new - Creating protocol handler");
         let (api, rx) = Handle::channel();
 
-        tokio::spawn(async move {
+        n0_future::task::spawn(async move {
             tracing::debug!("Protocol::new - Spawned ProtocolActor");
             let mut actor = ProtocolActor {
                 rx,
